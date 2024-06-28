@@ -1,140 +1,146 @@
-
 /**
  * ProcessWire FloatRange Inputfield
  * By @eelke, https://eelke.net
+ * Modified by EPRC, https://eprc.studio
  * Styling created with http://danielstern.ca/range.css/?ref=css-tricks#/
  */
 
-.InputfieldFloatRange__display
-{
-    width: 120px !important;
-
-    text-align: center;
-
-    border-left: none !important;
-}
-
-.InputfieldFloatRange input[type=range]
-{
-    width: 100%;
-    margin: 8px 0;
-
-    -webkit-appearance: none;
-}
-.InputfieldFloatRange input[type=range].InputfieldFloatRange--without-value
-{
-    width: 100%;
-}
-
-.InputfieldFloatRange input[type=range].InputfieldFloatRange--with-value
-{
-    border-right: none !important;
-    width: 80%;
-    width: calc(100% - 120px);
-}
-
-.InputfieldFloatRange input[type=range]:focus
-{
-    outline: none;
-}
-.InputfieldFloatRange input[type=range]::-webkit-slider-runnable-track
-{
-    width: 100%;
-    height: 0;
-
-    cursor: pointer;
-
-    border: 1px solid #000101;
-    border-radius: 7.1px;
-    background: rgba(48, 49, 49, .53);
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-}
-.InputfieldFloatRange input[type=range]::-webkit-slider-thumb
-{
-    width: 16px;
-    height: 16px;
-    margin-top: -9px;
-
-    cursor: pointer;
-
-    border: 1px solid #000;
-    border-radius: 25px;
-    background: #fff;
-    box-shadow: 1.8px 1.8px 3.3px #000, 0 0 1.8px #0d0d0d;
-
-    -webkit-appearance: none;
-}
-.InputfieldFloatRange input[type=range]:focus::-webkit-slider-runnable-track
-{
-    background: rgba(56, 57, 57, .53);
-}
-.InputfieldFloatRange input[type=range]::-moz-range-track
-{
-    width: 100%;
-    height: 0;
-
-    cursor: pointer;
-
-    border: 1px solid #000101;
-    border-radius: 7.1px;
-    background: rgba(48, 49, 49, .53);
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-}
-.InputfieldFloatRange input[type=range]::-moz-range-thumb
-{
-    width: 16px;
-    height: 16px;
-
-    cursor: pointer;
-
-    border: 1px solid #000;
-    border-radius: 25px;
-    background: #fff;
-    box-shadow: 1.8px 1.8px 3.3px #000, 0 0 1.8px #0d0d0d;
-}
-.InputfieldFloatRange input[type=range]::-ms-track
-{
-    width: 100%;
-    height: 0;
-
-    cursor: pointer;
-
-    color: transparent;
-    border-color: transparent;
-    background: transparent;
-}
-.InputfieldFloatRange input[type=range]::-ms-fill-lower
-{
-    border: 1px solid #000101;
-    border-radius: 14.2px;
-    background: rgba(40, 41, 41, .53);
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-}
-.InputfieldFloatRange input[type=range]::-ms-fill-upper
-{
-    border: 1px solid #000101;
-    border-radius: 14.2px;
-    background: rgba(48, 49, 49, .53);
-    box-shadow: 0 0 0 #000, 0 0 0 #0d0d0d;
-}
-.InputfieldFloatRange input[type=range]::-ms-thumb
-{
-    width: 16px;
-    height: 16px;
-    height: 0;
-
-    cursor: pointer;
-
-    border: 1px solid #000;
-    border-radius: 25px;
-    background: #fff;
-    box-shadow: 1.8px 1.8px 3.3px #000, 0 0 1.8px #0d0d0d;
-}
-.InputfieldFloatRange input[type=range]:focus::-ms-fill-lower
-{
-    background: rgba(48, 49, 49, .53);
-}
-.InputfieldFloatRange input[type=range]:focus::-ms-fill-upper
-{
-    background: rgba(56, 57, 57, .53);
-}
+ .InputfieldFloatRange__display
+ {
+     width: 80px !important;
+ }
+ 
+ .InputfieldFloatRange input[type=range]
+ {
+     width: 100%;
+ 
+     background: none !important;
+     border: none !important;
+ 
+     -webkit-appearance: none;
+     appearance: none;
+ }
+ 
+ .InputfieldFloatRange input[type=range].InputfieldFloatRange--without-value
+ {
+     width: 100%;
+     padding: 0;
+ }
+ 
+ .InputfieldFloatRange input[type=range].InputfieldFloatRange--with-value
+ {
+     width: calc(100% - 80px);
+     padding: 0 0 0 1em;
+ }
+ 
+ .InputfieldFloatRange input[type=range]:focus
+ {
+     outline: none;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-webkit-slider-runnable-track
+ {
+     background: #3eb998;
+     border: 0;
+     border-radius: 8px;
+     width: 100%;
+     height: 8px;
+     cursor: pointer;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-webkit-slider-thumb
+ {
+     margin-top: -7px;
+     width: 17px;
+     height: 28px;
+     background: url(../../../wire/modules/AdminTheme/AdminThemeUikit/uikit-pw/pw/images/slider_handles2x.png) 0 6px no-repeat;
+     background-size: 34px 21px;
+     border: none;
+     /* border-radius: 16px; */
+     cursor: pointer;
+     -webkit-appearance: none;
+ }
+ 
+ .InputfieldFloatRange input[type=range]:focus::-webkit-slider-runnable-track
+ {
+     background: #4dc3a4;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-moz-range-track
+ {
+     background: #3eb998;
+     border: 0;
+     border-radius: 8px;
+     width: 100%;
+     height: 8px;
+     cursor: pointer;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-moz-range-thumb
+ {
+     width: 17px;
+     height: 28px;
+     background: url(../../../wire/modules/AdminTheme/AdminThemeUikit/uikit-pw/pw/images/slider_handles2x.png) 0 6px no-repeat;
+     background-size: 34px 21px;
+     border: none;
+     /* border-radius: 16px; */
+     cursor: pointer;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-ms-track
+ {
+     background: transparent;
+     border-color: transparent;
+     border-width: 8px 0;
+     color: transparent;
+     width: 100%;
+     height: 8px;
+     cursor: pointer;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-ms-fill-lower
+ {
+     background: #2c3e50;
+     border: 0;
+     border-radius: 8px;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-ms-fill-upper
+ {
+     background: #3eb998;
+     border: 0;
+     border-radius: 8px;
+ }
+ 
+ .InputfieldFloatRange input[type=range]::-ms-thumb
+ {
+     width: 17px;
+     height: 28px;
+     background: url(../../../wire/modules/AdminTheme/AdminThemeUikit/uikit-pw/pw/images/slider_handles2x.png) 0 6px no-repeat;
+     background-size: 34px 21px;
+     border: none;
+     /* border-radius: 16px; */
+     cursor: pointer;
+     margin-top: 0px;
+     /*Needed to keep the Edge thumb centred*/
+ }
+ 
+ .InputfieldFloatRange input[type=range]:focus::-ms-fill-lower
+ {
+     background: #3eb998;
+ }
+ 
+ .InputfieldFloatRange input[type=range]:focus::-ms-fill-upper
+ {
+     background: #4dc3a4;
+ }
+ 
+ /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+ how to remove the virtical space around the range input in IE*/
+ @supports (-ms-ime-align:auto) {
+     /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+     .InputfieldFloatRange input[type=range] {
+         margin: 0;
+         /*Edge starts the margin from the thumb, not the track as other browsers do*/
+     }
+   }

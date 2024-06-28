@@ -1,10 +1,9 @@
-<?php
-
-namespace ProcessWire;
+<?php namespace ProcessWire;
 
 /**
  * ProcessWire FloatRange Inputfield
  * By @eelkenet, https://eelke.net
+ * Modified by EPRC, https://eprc.studio
  */
 
 class InputfieldFloatRange extends InputfieldFloat
@@ -93,11 +92,13 @@ class InputfieldFloatRange extends InputfieldFloat
 			$attrs["value"] = $this->value;
 		}
 
-		$out = parent::render();
+		$out = "";
 
 		if ($this->get("displayValueField")) {
-			$out .= "<input type='text' class='InputfieldFloatRange__display' value='$this->value' />";
+			$out .= "<input type='text' class='InputfieldFloatRange__display uk-input' value='$this->value' />";
 		}
+
+		$out .= parent::render();
 
 		return $out;
 	}
@@ -113,7 +114,7 @@ class InputfieldFloatRange extends InputfieldFloat
 
 		$value = $val;
 
-		if ($step !== "" && $step !== 0) {
+		if ($step !== "" && $step !== 0 && $step !== "any") {
 			if ($rounding === "round") $value = $step * round($value / $step);
 			else if ($rounding === "floor") $value = $step * floor($value / $step);
 			else if ($rounding === "ceil") $value = $step * ceil($value / $step);

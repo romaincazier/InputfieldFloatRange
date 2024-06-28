@@ -1,16 +1,15 @@
 /**
  * ProcessWire FloatRange Inputfield
  * By @eelke, https://eelke.net
+ * Modified by EPRC, https://eprc.studio
  */
 
 function getSettings(id) {
-
     // Allow for field to work within a repeater (-matrix).
     if (id.indexOf("_repeater") > 0) id = id.split("_repeater")[0];
 
     return window.ProcessWire.config.InputfieldFloatRange[id];
 }
-
 
 const { $ } = window;
 
@@ -30,7 +29,7 @@ $(document).ready(function () {
         }
 
         if (settings.displayValueField) {
-            event.target.nextSibling.value = val;
+            event.target.previousElementSibling.value = val;
         }
     });
 
@@ -39,7 +38,7 @@ $(document).ready(function () {
 
         const t = event.target;
 
-        const ranger = t.previousSibling;
+        const ranger = t.nextElementSibling;
         const settings = getSettings(ranger.id);
         let minMaxValue = Math.min(settings.max, Math.max(settings.min, parseFloat(t.value)));
 
@@ -57,7 +56,7 @@ $(document).ready(function () {
     $(document).on("blur", ".InputfieldFloatRange__display", function (event) {
 
         const t = event.target;
-        const ranger = t.previousSibling;
+        const ranger = t.nextElementSibling;
         const settings = getSettings(ranger.id);
 
         // Replace comma's with dots, if required
